@@ -12,7 +12,7 @@ Lamentablemente esta forma no siempre va a funcionar para calcular los símbolos
 
 Ahora: Se van a presentar 3 programas con varios niveles de complejidad, el último siendo el que se ocupo en la tesis para calcular los símbolos modulares:
 
-1) En el archivo test1.sage se encuentra la forma más fácil de calcular la conjetura 5 y la conjetura 6 de Mazur-Tate 1987:
+1) En el archivo test1.sage se encuentra la forma más fácil de calcular la versión multiplicativa de la conjetura 5 y la conjetura 6 de Mazur-Tate 1987:
    
 2) En el archivo test2.sage se encuentra una forma que SÓLO va a funcionar si se tiene SageMath instalado instalado en el computador y además si se tiene descargado e instalado la base de curvas elíptícas de Cremona.
 
