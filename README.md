@@ -5,14 +5,14 @@ NOTA IMPORTANTE: Es la primera vez que ocupo esta documentación de Github así 
 Vamos a mencionar 2 formas de usar SageMath:
 
 1) Existe la posibilidad de usar la página CoCalc, que tiene una implementación de SageMath y se puede usar en la misma página web de CoCalc. La página de CoCalc es la siguiente: https://cocalc.com/features/sage
-Lamentablemente esta forma no siempre va a funcionar para calcular los símbolos modulares, ya que CoCalc tiene un límite de cuanto se puede demorar el programa y si el programa se demora más de ese tiempo, entonces no va a devolver la respuesta. Esto es un problema ya que calcular los símbolos modulares de una curva elíptica con un conductor muy grande e.g. 20.000, va a tomar mucho más tiempo de que permite CoCalc. Codigo: https://github.com/JpLlerena/MazurTate/blob/e29ebd6c02d86b4f4824266c3aa0a129218055d3/Test1.sage 
+Lamentablemente esta forma no siempre va a funcionar para calcular los símbolos modulares, ya que CoCalc tiene un límite de cuanto se puede demorar el programa y si el programa se demora más de ese tiempo, entonces no va a devolver la respuesta. Esto es un problema ya que calcular los símbolos modulares de una curva elíptica con un conductor muy grande e.g. 20.000, va a tomar mucho más tiempo de que permite CoCalc. 
 
 2) Para evitar la limitante del tiempo, que fué lo que se hizo para la tesis, fué instalar el programa de SageMath directamente en el computador. Para eso se pueden seguir las intrucciones de: https://doc.sagemath.org/html/en/installation/index.html. Lamentablemente existe otra limitante de esta forma, que es el computador que uno esta utilizando. Sin importar el método que uno este utilizando, si el computador que uno esta utilizando es lento, entonces los SageMath puede demorarse mucho tiempo en devolver el valor de los símbolos modulares. Para obtener los más de 500.000 pares utilizandos en la tesis, no sé calculo exactamente el tiempo total, pero fueron alrededor de 8 horas diarias a los largo de 3 semanas. La otra limitante de usarlo en el computador personal es que para asegurarme de que SageMath no iba a devolver algún error, para el cálculo inicial, utilicé la implementación ya que es más lento pero a veces más seguro y se puede dejar el computador sin supervización (Lo cual el método de C. Wuthrich lamentablemente puede presentar en algunas curvas elípticas).
 
 
 Ahora: Se van a presentar 3 programas con varios niveles de complejidad, el último siendo el que se ocupo en la tesis para calcular los símbolos modulares:
 
-1) En el archivo test1.sage se encuentra la forma más fácil de calcular la versión multiplicativa de la conjetura 5 y la conjetura 6 de Mazur-Tate 1987:
+1) En el archivo test1.sage se encuentra la forma más fácil de calcular la versión multiplicativa de la conjetura 5 y la conjetura 6 de Mazur-Tate 1987. Codigo: https://github.com/JpLlerena/MazurTate/blob/e29ebd6c02d86b4f4824266c3aa0a129218055d3/Test1.sage 
    
 2) En el archivo test2.sage se encuentra una forma que SÓLO va a funcionar si se tiene SageMath instalado instalado en el computador y además si se tiene descargado e instalado la base de curvas elíptícas de Cremona.
 
@@ -20,3 +20,5 @@ Ahora: Se van a presentar 3 programas con varios niveles de complejidad, el últ
 
 # Tablas
 Las tablas con todos las curvas elipticas se encuentran en el siguiente formato: El texto es identico al del apendice, solo que ahora se agregaron todas las curvas elípticas. Para la conjetura 5 de MT es la tabla Table_5.pdf (pesa bastante) y para la conjetura 6 de MT es la tabla Table_6.pdf.
+Table 5: https://github.com/JpLlerena/MazurTate/blob/ea5124a5f8e7b5c52dffccf11bc190de670e593c/Table_5.pdf
+Table 6: https://github.com/JpLlerena/MazurTate/blob/ea5124a5f8e7b5c52dffccf11bc190de670e593c/Table_6.pdf
