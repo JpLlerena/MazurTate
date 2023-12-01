@@ -20,5 +20,7 @@ Ahora: Se van a presentar 3 programas con varios niveles de complejidad, el últ
 
 # Tablas
 Las tablas con todos las curvas elipticas se encuentran en el siguiente formato: El texto es identico al del apendice, solo que ahora se agregaron todas las curvas elípticas. Para la conjetura 5 de MT es la tabla Table_5.pdf (pesa bastante) y para la conjetura 6 de MT es la tabla Table_6.pdf.
+
 Table 5: https://github.com/JpLlerena/MazurTate/blob/ea5124a5f8e7b5c52dffccf11bc190de670e593c/Table_5.pdf
+
 Table 6: https://github.com/JpLlerena/MazurTate/blob/ea5124a5f8e7b5c52dffccf11bc190de670e593c/Table_6.pdf
