@@ -1,4 +1,4 @@
-#IMPORTANTE: No se recomienda utilizar este programa ya que después de la línea "if __name__ == '__main__':" hay que cambiar constante dependiendo de que es lo que se quiere hacer. Nuevamente, esto es una limitante ya que para calcular mucho símbolos modulares, esto se tuvo que hacer a lo largo de días y de vez en cuando se cambiaba la funcionalidad para ver cuantas curvas elípticas no satisfacias las conjeturas y ver si el programa estaba haciendo lo esperado.
+#IMPORTANTE: No se recomienda utilizar este programa ya que después de la línea "if __name__ == '__main__':" hay que cambiar constante dependiendo de que es lo que se quiere hacer. Nuevamente, esto es una limitante ya que para calcular mucho símbolos modulares, esto se tuvo que hacer a lo largo de días y de vez en cuando se cambiaba la funcionalidad para ver cuantas curvas elípticas no satisfacias las conjeturas y ver si el programa estaba haciendo lo esperado. Adicionalmente, hay muchas lineas que no se ocuparon.
 
 import os
 import sys

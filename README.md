@@ -1,26 +1,49 @@
-# MazurTate
+# How to use SageMath
+We will mention two ways of using SageMath:
+1) The exists the possibility of using SageMath online, by its implementation on CoCalc. To use SageMath on the CoCalc website, follow this link: https://cocalc.com/features/sage.
+Unfortunately, this way of using SageMath will not always work, the reason being that the computation time required to calculate the necessary modular symbols may take more time than the maximum allowed, at which point one gets a Timeout error.
 
-NOTA IMPORTANTE: Es la primera vez que ocupo esta documentación de Github así que voy a intentar que quedo lo más claro posible y tal vez la modifique para agregar los hypervínculos.
+2) To bypass the Timeout error, and the method used in the thesis, it is possible to install SageMath on a local computer. For a guide on how to install SageMath see: https://doc.sagemath.org/html/en/installation/index.html.
+Unfortunately, there is also a limitation to this method, which is the hardware in which SageMath is installed. Depending on the local computer, calculating the necessary modular symbols may take some seconds or some minutes. In a worst-case scenario, which may happen if the conductor of the elliptic curve in question is large, the computer may freeze if it runs out of RAM (Random Access Memory). 
+For the calculations used in the thesis, it took multiple hours of run time, spanning around 3 weeks. 
 
-Vamos a mencionar 2 formas de usar SageMath:
+Remark: For the calculation done in the thesis we used SageMath implementation, this was to avoid possible issues that may arise as the computer was left unsupervised for several hours.
 
-1) Existe la posibilidad de usar la página CoCalc, que tiene una implementación de SageMath y se puede usar en la misma página web de CoCalc. La página de CoCalc es la siguiente: https://cocalc.com/features/sage
-Lamentablemente esta forma no siempre va a funcionar para calcular los símbolos modulares, ya que CoCalc tiene un límite de cuanto se puede demorar el programa y si el programa se demora más de ese tiempo, entonces no va a devolver la respuesta. Esto es un problema ya que calcular los símbolos modulares de una curva elíptica con un conductor muy grande e.g. 20.000, va a tomar mucho más tiempo de que permite CoCalc. 
+# Programs for conjectures
+We will give 3 different codes to compute the conjectures, with ever-increasing complexity (All of them contain an explanation at the beginning of the script):
 
-2) Para evitar la limitante del tiempo, que fué lo que se hizo para la tesis, fué instalar el programa de SageMath directamente en el computador. Para eso se pueden seguir las intrucciones de: https://doc.sagemath.org/html/en/installation/index.html. Lamentablemente existe otra limitante de esta forma, que es el computador que uno esta utilizando. Sin importar el método que uno este utilizando, si el computador que uno esta utilizando es lento, entonces los SageMath puede demorarse mucho tiempo en devolver el valor de los símbolos modulares. Para obtener los más de 500.000 pares utilizandos en la tesis, no sé calculo exactamente el tiempo total, pero fueron alrededor de 8 horas diarias a los largo de 3 semanas. La otra limitante de usarlo en el computador personal es que para asegurarme de que SageMath no iba a devolver algún error, para el cálculo inicial, utilicé la implementación ya que es más lento pero a veces más seguro y se puede dejar el computador sin supervización (Lo cual el método de C. Wuthrich lamentablemente puede presentar en algunas curvas elípticas).
+1) The files Test_1_Conjecture_5.sage and Test_1_Conjecture_6.sage contain the simplest way of calculating the multiplicative versions of conjecture 5 and conjecture 6 presented in the original Mazur and Tate article. This script can be run on CoCalc's website or a local computer.
+For the script of conjecture 5: 
+For the script of conjecture 6: 
 
+2) The files Test_2_Conjecture_5.sage and Test_2_Conjecture_6.sage files can not be run on CoCalc's website and have to be run on a local computer. Also, some setup has to be done before running the script:
+For the script of conjecture 5: 
+For the script of conjecture 6: 
 
-Ahora: Se van a presentar 3 programas con varios niveles de complejidad, el último siendo el que se ocupo en la tesis para calcular los símbolos modulares:
+3) The files Test_3_Conjecture_5.sage and Test_3_Conjecture_6.sage files can not be run on CoCalc's website and have to be run on a local computer. Also, several setup has to be done before running the script. It is not recommended to use if the user is not familiar with programming:
+For the script of conjecture 5: Soon
+For the script of conjecture 6: Soon
 
-1) En el archivo test1.sage se encuentra la forma más fácil de calcular la versión multiplicativa de la conjetura 5 y la conjetura 6 de Mazur-Tate 1987. Codigo: https://github.com/JpLlerena/MazurTate/blob/e29ebd6c02d86b4f4824266c3aa0a129218055d3/Test1.sage 
-   
-2) En el archivo test2.sage se encuentra una forma que SÓLO va a funcionar si se tiene SageMath instalado instalado en el computador y además si se tiene descargado e instalado la base de curvas elíptícas de Cremona.
+We also give the original code used for the calculations 'ThesisRaw.sage'. However, it is not recommended to use this code, as some modifications have to be done in the code depending on the purpose.
 
-3) En el archivo TesisRaw.sage se encuentre el archivo original que se ocupo en la tesis. Ahora, en el momento de hacer la tesis se pensó probar más conjeturas y a diferentes niveles. Por lo tanto, hay muchas lineas/funciones/objetos definidos que no sirven o directamente no se ocuparon. En el archivo Tesis.sage, se encuentra el mismo código pero solo con las líneas que se utilizaron y con mejor nombre de variables. La complejidad de se debe a que porque como los símbolos modulares se demoran mucho en cálcular, en cambio de dejar el computador prendido sin detenerse, se implemento una forma de primero cálcular símbolos modulares, guardarlos en un archivo .txt, cosa de que se puede apagar el computador y luego cuando se vuelva a iniciar el programa, siga calculando los símbolos modulares sin necesidad de cálcular los que están guardados en el .txt. Adicionalmente, para acelerar el proceso, se utilizó la implementación de multiprocessing de python para calcular varios símbolos modulares a la vez. Esto puede ser muy demandante para el computador y además puede utilizar mucha RAM, dependiendo de cuantos símbolos modulares se están cálculando a la vez y del conductor de estas. Hubo momentos que el programa llegó a utilizar más de 20 GB de memoria RAM, esto fué cuando se ocuparon 8 procesos (es decir 8 curvas elípticas simultaneamente), pero una forma de remediar eso es solo ocupa 1 proceso, es decir, una curva elíptica a la vez. Esto es mucho menos demandante que varios a la vez y ocupa menos memoria RAM. Pero es otra limitante de utilizar este programa a diferencia de los dos anteriores, posiblemente para gente no familiarizada.
+We also give the equivalent codes for the local conjectures:
+1) Local version of the Test_1_Conjecture_5_local.sage and Test_1_Conjecture_6_local.sage files:
+For the script of conjecture 5: 
+For the script of conjecture 6: 
 
-# Tablas
-Las tablas con todos las curvas elipticas se encuentran en el siguiente formato: El texto es identico al del apendice, solo que ahora se agregaron todas las curvas elípticas. Para la conjetura 5 de MT es la tabla Table_5.pdf (pesa bastante) y para la conjetura 6 de MT es la tabla Table_6.pdf.
+2) Local version of the Test_2_Conjecture_5_local.sage and Test_2_Conjecture_6_local.sage files:
+For the script of conjecture 5: 
+For the script of conjecture 6: 
 
-Table 5: https://github.com/JpLlerena/MazurTate/blob/ea5124a5f8e7b5c52dffccf11bc190de670e593c/Table_5.pdf
+3) Local version of the Test_3_Conjecture_5_local.sage and Test_3_Conjecture_6_local.sage files:
+For the script of conjecture 5: Soon
+For the script of conjecture 6: Soon
 
-Table 6: https://github.com/JpLlerena/MazurTate/blob/ea5124a5f8e7b5c52dffccf11bc190de670e593c/Table_6.pdf
+# Thesis code
+
+For the code used in the thesis: 
+
+# Tables
+Here we also give the full the full list of elliptic curves that, apparently, do not satisfy the multiplicative version of conjecture 5 and the multiplicative version of conjecture 6. The PDF is identical to the one presented in the thesis only that the full table is given, not only a partial one:
+Table for conjecture 5: https://github.com/JpLlerena/MazurTate/blob/ea5124a5f8e7b5c52dffccf11bc190de670e593c/Table_5.pdf
+Table for conjecture 6: https://github.com/JpLlerena/MazurTate/blob/ea5124a5f8e7b5c52dffccf11bc190de670e593c/Table_6.pdf
